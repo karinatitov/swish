@@ -30,19 +30,19 @@ jobs:
         with:
           context: .
           load: true
-          tags: app/python:latest
+          tags: karinatitov/app:latest
       -
         name: Scan for vulnerabilities
         id: scan
         uses: crazy-max/ghaction-container-scan@v2
         with:
-          image: app/python:latest
+          image: karinatitov/app:latest
           dockerfile: ./Dockerfile
       -
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN_1 }}
+          github-token: ${{ secrets.GITHUB_TOKEN_1 }}
           context: .
           push: true
-          tags: app/python:latest
+          tags: karinatitov/app:latest
