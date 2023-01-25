@@ -17,6 +17,8 @@ jobs:
         uses: docker/setup-qemu-action@v2
       -
         name: Set up Docker Buildx
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN_1 }}
         uses: docker/setup-buildx-action@v2
       -
         name: Login to DockerHub
