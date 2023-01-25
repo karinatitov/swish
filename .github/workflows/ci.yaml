@@ -30,13 +30,13 @@ jobs:
         with:
           context: .
           load: true
-          tags: python:latest
+          tags: app/python:latest
       -
         name: Scan for vulnerabilities
         id: scan
         uses: crazy-max/ghaction-container-scan@v2
         with:
-          image: python:latest
+          image: app/python:latest
           dockerfile: ./Dockerfile
       -
         name: Build and push
@@ -44,4 +44,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: python:latest
+          tags: app/python:latest
