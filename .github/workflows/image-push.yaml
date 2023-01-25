@@ -24,23 +24,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and load
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          load: true
-          tags: python:latest
-      -
-        name: Scan for vulnerabilities
-        id: scan
-        uses: crazy-max/ghaction-container-scan@v2
-        with:
-          image: python:latest
-          dockerfile: ./Dockerfile
-      -
         name: Build and push
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: python:latest
+          tags: user/app:latest
