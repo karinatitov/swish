@@ -31,7 +31,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN_1 }}
           context: .
           push: true
-          tags: karinatitov/app:latest
+          tags: "docker.io/karinatitov/app:${{ github.sha }}"
 # Save result of  scan
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
