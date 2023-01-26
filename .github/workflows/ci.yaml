@@ -30,6 +30,10 @@ jobs:
           format: 'sarif'
           output: 'trivy-results.sarif'
       -
+        name: Upload Trivy scan results to GitHub Security tab
+        run: |
+          cp trivy-results.sarif .
+      -
         name: Build and push
         uses: docker/build-push-action@v3
         with:
