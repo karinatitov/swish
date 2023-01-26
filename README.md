@@ -16,8 +16,9 @@ I could find more, but think these are the methods that are most common, and tha
     Exploit data
     Number of assets reported with the same vulnerability
     Impact of the vulnerability
-  b) Timely Remediation
+  b) Timely Remediation.(from my experience, first and most common thing is to find if we can upgrade the package to resolve the issue)
   c) If we want to automate the process, there are tools that have a db with 100s thousands security checks, that ease the overall vulnerability remediation process
   
+I believe that the best way of avoiding deploying malicious packages is always run the scan in your ci and catch those vulnerabilities in development process.
 
   
