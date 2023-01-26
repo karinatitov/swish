@@ -23,8 +23,8 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: "docker.io/karinatitov/app:${{ github.sha }}"
-          format: "sarif"
-          output: "trivy-results.sarif"
+          format: "table"
+          output: "trivy-results.txt"
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
@@ -38,7 +38,7 @@ jobs:
 
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
-          echo trivy-results.sarif > downloads/results.html
+          cp trivy-results.txt downloads/
 
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
