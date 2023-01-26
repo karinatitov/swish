@@ -8,4 +8,16 @@ As for this example i was trying to focus on building ci pipeline of this projec
 4. Also we can use .dockerignore where we can specify all kinds of files. Here is an [example](https://github.com/themattrix/python-pypi-template/blob/master/.dockerignore) of files that could be listed.
 I could find more, but think these are the methods that are most common, and that i would try to use first.
 
-###
+###CVEs
+1. I generated the report with CVEs listed as a table and saved as an artifact after the ci pipeline is done running. you can find it under the 'Artifacts' section in the Summary of the Action. 
+2. In order to remediate all the possible risks, we will have to perform what is called a 'container hardening', and in order to do that i would follow these steps:
+  a) Prioritize as per risk level. Key matrices are: 
+    CVSS scores 
+    Exploit data
+    Number of assets reported with the same vulnerability
+    Impact of the vulnerability
+  b) Timely Remediation
+  c) If we want to automate the process, there are tools that have a db with 100s thousands security checks, that ease the overall vulnerability remediation process
+  
+
+  
