@@ -19,12 +19,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and load
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          load: true
-          tags: karinatitov/app:${{ github.sha }} .
+        name: Build an image from Dockerfile
+        run: |
+          docker build -t docker.io/karinatitov/app:${{ github.sha }} .
       -
         name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
