@@ -32,7 +32,7 @@ jobs:
       -
         name: Upload Trivy scan results to GitHub Security tab
         run: |
-          cp trivy-results.sarif .
+          mkdir scan && cp trivy-results.sarif scan/
       -
         name: Build and push
         uses: docker/build-push-action@v3
