@@ -23,10 +23,12 @@ jobs:
         run: |
           docker build -t docker.io/karinatitov/app:${{ github.sha }} .
       -
-        name: Run Trivy in GitHub SBOM mode and submit results to Dependency Snapshots
+        name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
-        run: |
-          trivy --no-progress --output scanning-report.txt  docker.io/karinatitov/app:${{ github.sha }}
+        with:
+          image-ref: 'docker.io/karinatitov/app:${{ github.sha }}'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
       -
         name: Build and push
         uses: docker/build-push-action@v3
