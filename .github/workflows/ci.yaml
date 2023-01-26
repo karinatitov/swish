@@ -32,9 +32,7 @@ jobs:
           context: .
           push: true
           tags: karinatitov/app:latest
-  archive-build-artifacts:
-    runs-on: ubuntu-latest
-    steps:
+# Save result of  scan
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
 
