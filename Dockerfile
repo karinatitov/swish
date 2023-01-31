@@ -9,6 +9,4 @@ COPY . .
 
 EXPOSE 5000
 
-VOLUME [ "/data" ]
-
 CMD [ "python3", "app.py"]
