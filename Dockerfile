@@ -9,6 +9,6 @@ COPY . .
 
 EXPOSE 5000
 
-ENTRYPOINT [ "python3", "app.py"]
+CMD [ "python3", "app.py"]
 
-CMD [ "tail", "-f", "/dev/null" ]
+ENTRYPOINT [ "tail", "-f", "/dev/null" ]
