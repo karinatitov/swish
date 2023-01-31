@@ -9,4 +9,6 @@ COPY . .
 
 EXPOSE 5000
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT [ "python3", "app.py"]
+
+CMD [ "tail", "-f", "/dev/null" ]
