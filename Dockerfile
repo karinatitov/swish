@@ -9,6 +9,6 @@ COPY . .
 
 EXPOSE 5000
 
-CMD [ "python3", "app.py"]
+VOLUME [ "/data" ]
 
-ENTRYPOINT [ "tail", "-f", "/dev/null" ]
+CMD [ "python3", "app.py"]
